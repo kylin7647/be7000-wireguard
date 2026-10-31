@@ -1,6 +1,6 @@
-# rc06-wireguard
+# rc06-wireguard (a.k.a. be7000-wireguard)
 
-**在小米 BE7000 / RC06 等高通 IPQ 魔改内核路由器的 Docker 里跑 WireGuard 服务端——不需要内核模块,不需要拆机刷机。**
+**在小米 BE7000 (RC06) 等高通 IPQ 魔改内核路由器的 Docker 里跑 WireGuard 服务端——不需要内核模块,不需要拆机刷机。**
 
 > English TL;DR: Run a WireGuard server in Docker on Xiaomi routers with vendor-patched 5.4 kernels (IPQ807x era) where the WireGuard kernel module is absent and cannot be installed. This repo ships a userspace `wireguard-go` build with a one-line fix (`IFF_VNET_HDR` removed) — without it, the vendor tun driver silently drops all userspace TUN writes and the VPN data plane is dead while handshakes look perfectly healthy. See [docs/story.md](docs/story.md) for the full debugging saga.
 
